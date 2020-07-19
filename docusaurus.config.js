@@ -2,7 +2,7 @@ module.exports = {
   title: 'Yaipan APIs',
   tagline: 'Documentación de los APIs de Yaipan',
   url: 'https://yaipan.github.io',
-  baseUrl: '/apis',
+  baseUrl: '/apis/',
   favicon: 'img/yaipan-favicon.png',
   organizationName: 'yaipan', // Usually your GitHub org/user name.
   projectName: 'apis', // Usually your repo name.
