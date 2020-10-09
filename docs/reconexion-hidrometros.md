@@ -66,10 +66,16 @@ GET https://webservice.ejemplo.com/v1/reconexion-hidrometros/reconectar/[numeroM
 | -------------- | -------------------- |
 | numeroMedidor | Número de medidor que se desea reconectar  |
 
+### Body Parameters
+
+| Parámetro      |     Descripción      |
+| -------------- | -------------------- |
+| usuario | Usuario que ejecuta la reconexión (longitud máxima de 8 caracteres)  |
+
 ### Ejemplo
 
 ```javascript
-curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/reconexion-hidrometros/reconectar/202004"
+curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/reconexion-hidrometros/reconectar/202004" -d '{"usuario":"us_1801"}'
 ```
 
 Este método devuelve JSON estructurado de la siguiente manera:
