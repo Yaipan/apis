@@ -75,7 +75,7 @@ GET https://webservice.ejemplo.com/v1/reconexion-hidrometros/reconectar/[numeroM
 ### Ejemplo
 
 ```javascript
-curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/reconexion-hidrometros/reconectar/202004" -d '{"usuario":"us_18018"}'
+curl -X POST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/reconexion-hidrometros/reconectar/202004" -d '{"usuario":"us_18018"}'
 ```
 
 Este método devuelve JSON estructurado de la siguiente manera:
