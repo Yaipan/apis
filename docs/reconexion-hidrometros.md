@@ -27,21 +27,18 @@ Este método devuelve JSON estructurado de la siguiente manera:
 ```javascript
 [
     {
-        "compania": "EJEMPLO",
         "numeroMedidor": 202004.0,
         "reconectar": "S",
         "ruta": 2,
         "ubicacion": 4
     },
     {
-        "compania": "EJEMPLO",
         "numeroMedidor": 202005.0,
         "reconectar": "S",
         "ruta": 2,
         "ubicacion": 5
     },
     {
-        "compania": "EJEMPLO",
         "numeroMedidor": 202006.0,
         "reconectar": "S",
         "ruta": 2,
@@ -83,7 +80,6 @@ Este método devuelve JSON estructurado de la siguiente manera:
 ```javascript
 [
     {
-        "compania": "EJEMPLO",
         "numeroMedidor": 202004.0,
         "reconectar": "N"
     }
