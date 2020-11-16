@@ -46,6 +46,8 @@ Este método devuelve JSON estructurado de la siguiente manera:
         "estadoPermiso": "01 - INGRESADO",
         "fechaReciboPago": null,
         "horizontalFilial": false,
+        "montoMultas": 0.0,
+        "montoPermisoTasado": 0.0,
         "numeroCuenta": 10,
         "numeroDerecho": "000",
         "numeroFinca": "0081",
