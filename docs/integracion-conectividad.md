@@ -304,6 +304,20 @@ Este método devuelve JSON estructurado de la siguiente manera:
 ]
 ```
 
+:::important
+
+En el caso del convenio de carrito de compras, la respuesta a obtener saldos de persona también incluiría los siguientes campos:
+
+* numeroPersona
+* auxiliarContable
+* numeroCuenta
+* tipoTransaccion
+* numeroDocumento
+
+**NOTA:** Estos valores son necesarios para hacer la llamada al método ejecutarPago bajo el convenio de carrito de compras.
+
+:::
+
 ## Saldos Persona (Convenio Total)
 
 Método para consultar los saldos de una persona para el convenio total.
@@ -527,6 +541,11 @@ POST https://webservice.ejemplo.com/v1/integracion-conectividad/ejecutar-pago
 | periodo | Periodo del recibo a pagar  |
 | montoTotal | Monto total  |
 | numeroFactura | Número de factura del recibo a pagar  |
+| numeroPersona | Número de persona `(sólo aplica para el convenio de carrito de compras)` |
+| auxiliarContable | Auxiliar contable `(sólo aplica para el convenio de carrito de compras)` |
+| numeroCuenta | Número de cuenta `(sólo aplica para el convenio de carrito de compras)` |
+| tipoTransaccion | Tipo de transacción `(sólo aplica para el convenio de carrito de compras)` |
+| numeroDocumento | Número de documento `(sólo aplica para el convenio de carrito de compras)` |
 
 ### Ejemplo
 
@@ -557,6 +576,20 @@ Este método devuelve JSON estructurado de la siguiente manera:
     }
 ]
 ```
+
+:::important
+
+En el caso del convenio de carrito de compras, se deben incluir valores para los siguientes campos:
+
+* numeroPersona
+* auxiliarContable
+* numeroCuenta
+* tipoTransaccion
+* numeroDocumento
+
+Además, en el caso del convenio de carrito de compras, la respuesta sólo incluye el número de factura y código de respuesta.
+
+:::
 
 ## Ejecutar Pago (Convenio Total)
 
