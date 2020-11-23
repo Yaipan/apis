@@ -308,7 +308,6 @@ Este método devuelve JSON estructurado de la siguiente manera:
 
 En el caso del convenio de carrito de compras, la respuesta a obtener saldos de persona también incluiría los siguientes campos:
 
-* numeroPersona
 * auxiliarContable
 * numeroCuenta
 * tipoTransaccion
