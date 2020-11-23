@@ -541,11 +541,16 @@ POST https://webservice.ejemplo.com/v1/integracion-conectividad/ejecutar-pago
 | periodo | Periodo del recibo a pagar  |
 | montoTotal | Monto total  |
 | numeroFactura | Número de factura del recibo a pagar  |
-| numeroPersona | Número de persona `(sólo aplica para el convenio de carrito de compras)` |
-| auxiliarContable | Auxiliar contable `(sólo aplica para el convenio de carrito de compras)` |
-| numeroCuenta | Número de cuenta `(sólo aplica para el convenio de carrito de compras)` |
-| tipoTransaccion | Tipo de transacción `(sólo aplica para el convenio de carrito de compras)` |
-| numeroDocumento | Número de documento `(sólo aplica para el convenio de carrito de compras)` |
+| transacciones | Transacciones que se desean pagar `(sólo aplica para el convenio de carrito de compras)` |
+
+Las transacciones incluyen los siguientes atributos:
+
+| Atributo | Descripción |
+| -- | -- |
+| auxiliarContable | Auxiliar contable |
+| numeroCuenta | Número de cuenta |
+| tipoTransaccion | Tipo de transacción |
+| numeroDocumento | Número de documento |
 
 ### Ejemplo
 
@@ -559,7 +564,15 @@ curl -X POST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU="
          "codigoAgencia": "",
          "periodo": "",
          "montoTotal": 0.0,
-         "numeroFactura": 0.0
+         "numeroFactura": 0.0,
+         "transacciones": [
+           {
+             "auxiliarContable": "CUF",
+             "numeroCuenta": 1,
+             "tipoTransaccion": "IBI",
+             "numeroDocumento": "123"
+           }
+         ]
        }'
 ```
 
@@ -579,7 +592,7 @@ Este método devuelve JSON estructurado de la siguiente manera:
 
 :::important
 
-En el caso del convenio de carrito de compras, se deben incluir valores para los siguientes campos:
+En el caso del convenio de carrito de compras, se debe incluir una lista de transacciones que incluyen los siguientes valores:
 
 * numeroPersona
 * auxiliarContable
