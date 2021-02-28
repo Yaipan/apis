@@ -67,6 +67,7 @@ GET https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-persona-re
 | numeroPagina | Número de página  |
 | longitudPagina | Longitud de página  |
 | fechaLimite | Fecha límite hasta donde filtrar saldos (opcional)  |
+| montoDisponible | Monto disponible (sólo para convenio de pago por monto) |
 
 ### Ejemplo
 
@@ -142,6 +143,7 @@ GET https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-persona-re
 | numeroPagina | Número de página  |
 | longitudPagina | Longitud de página  |
 | fechaLimite | Fecha límite hasta donde filtrar saldos (opcional)  |
+| montoDisponible | Monto disponible (sólo para convenio de pago por monto) |
 
 ### Ejemplo
 
@@ -243,6 +245,7 @@ GET https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-persona
 | codigoConvenio | Código de convenio  |
 | identificacion | Identificación de la persona  |
 | fechaLimite | Fecha límite hasta donde filtrar saldos (opcional)  |
+| montoDisponible | Monto disponible (sólo para convenio de pago por monto) |
 
 ### Ejemplo
 
