@@ -107,7 +107,7 @@ Ver la sección **Códigos Internos** para saber de dónde obtener el detalle de
 
 ## Actualizar Propiedad
 
-Método encargado de reconectar un hidrómetro identificado por el número de medidor dado.
+Método encargado de actualizar un propiedad identificada por el identificador catastral dado.
 
 ### HTTP Request
 
