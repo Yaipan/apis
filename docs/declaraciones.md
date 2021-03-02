@@ -191,16 +191,70 @@ POST https://webservice.ejemplo.com/v1/declaraciones/guardarDeclaracion
 | ----------------------------- | -------------------- |
 | numeroCuenta                  | El número de la cuenta  |
 | numeroFinca                   | El número de finca   |
-| valorTerreno                  | El valor del terreno  |
-| valorConstruccion             | El valor de la construcción  |
-| obrasComunesFincasFiliales    | El valor de obras comunes en fincas filiales  |
-| terrenosComunesFincasFiliales | El valor de terrenos comunes en fincas filiales  |
-| valorTotal                    | El valor total de la declaración  |
 | detalles                      | El detalle de la declaración  |
 
 :::caution
 
 Al llamar este método se debe proporcionar el `número de cuenta` y el `número de finca`, ya que son la llave del registro. En la estructura que devuelve el método `obtenerFinca` se puede encontrar el número de cuenta. El número de cuenta no es lo mismo que el número de finca ni la cédula.
+
+:::
+
+### Ejemplo
+
+```javascript
+curl -XPOST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" -H 'Content-Type: application/json'
+   "https://webservice.ejemplo.com/v1/declaraciones/guardarDeclaracion"
+   -d '{"numeroCuenta":1000,
+        "numeroFinca":234567,
+        "detalles":[
+            {
+                "numeroConstruccion": 14,
+                "edad": 1
+            }
+        ]
+      }'
+```
+
+Este método devuelvo JSON estructurado con el número de la declaración además de los valores calculados de terreno y construcción. También devuelve un código HTTP `200 OK` si se guardó correctamente:
+
+```javascript
+{
+    "numeroDeclaracion": 4368,
+    "valorConstruccionCalculado": 750000,
+    "valorTerrenoCalculado": 2000000
+}
+```
+
+## Actualizar Declaración
+
+Este método actualiza la información de la declaración identificada por la información proporcionada.
+
+:::important
+
+ Este método se debe ejecutar luego de haber ejecutar guardar declaración, ya que de ahí se obtendría el número de declaración, además de los valores calculados de terreno y construcción.
+
+:::
+
+### HTTP Request
+
+```javascript
+POST https://webservice.ejemplo.com/v1/declaraciones/guardarDeclaracion
+```
+
+### Body Parameters
+
+| Parámetro                     |     Descripción      |
+| ----------------------------- | -------------------- |
+| numeroDeclaracion             | El número de declaración  |
+| valorTerreno                  | El valor del terreno  |
+| valorConstruccion             | El valor de la construcción  |
+| obrasComunesFincasFiliales    | El valor de obras comunes en fincas filiales  |
+| terrenosComunesFincasFiliales | El valor de terrenos comunes en fincas filiales  |
+| valorTotal                    | El valor total de la declaración  |
+
+:::caution
+
+Al llamar este método se debe proporcionar el `número de declaración` que se devuelve como parte del método guardar declaración.
 
 :::
 
@@ -214,27 +268,14 @@ Este método utiliza códigos de respuesta para indicar el estado de la transacc
 
 ```javascript
 curl -XPOST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" -H 'Content-Type: application/json'
-   "https://webservice.ejemplo.com/v1/declaraciones/guardarDeclaracion"
-   -d '{"numeroCuenta":1000,
-        "numeroFinca":234567,
-        "valorTerreno":"50000",
-        "valorConstruccion":"25000",
-        "obrasComunesFincasFiliales":"0",
-        "terrenosComunesFincasFiliales":"0",
-        "valorTotal":"75000",
-        "detalles":[
-            {
-                "numeroConstruccion": 14,
-                "edad": 1
-            }
-        ]
+   "https://webservice.ejemplo.com/v1/declaraciones/actualizarDeclaracion"
+   -d '{"numeroDeclaracion":4368,
+        "valorTerreno":50000.0,
+        "valorConstruccion":25000.0,
+        "obrasComunesFincasFiliales":0.0,
+        "terrenosComunesFincasFiliales":0.0,
+        "valorTotal":75000.0
       }'
-```
-
-Este método devuelvo JSON estructurado con el número de la declaración y con un código HTTP `200 OK` si se guardó correctamente:
-
-```javascript
-4368
 ```
 
 ## Obtener Valor Declarado
@@ -288,6 +329,8 @@ Este método devuelvo JSON estructurado de la siguiente manera:
         "fechaDeclaracion": "10/08/2019",
         "terrenoAreaComun": 0.0,
         "terrenoAreaPrivada": 0.0,
+        "valorTerrenoCalculado": 20000000.0,
+        "valorConstruccionCalculado": 750000.0,
         "valorDeclarado": 1500000.0,
         "valorTerrenoDeclarado": 0.0,
         "valorConstruccionesDeclarado": 1500000.0,
