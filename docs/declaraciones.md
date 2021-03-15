@@ -238,7 +238,7 @@ Este método actualiza la información de la declaración identificada por la in
 ### HTTP Request
 
 ```javascript
-POST https://webservice.ejemplo.com/v1/declaraciones/guardarDeclaracion
+POST https://webservice.ejemplo.com/v1/declaraciones/actualizarDeclaracion
 ```
 
 ### Body Parameters
