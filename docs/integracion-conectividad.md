@@ -506,6 +506,49 @@ Este método devuelve JSON estructurado de la siguiente manera:
 ]
 ```
 
+## Saldos Arreglo de Pago
+
+Método para consultar los saldos relacionados a un arreglo de pago.
+
+### HTTP Request
+
+```javascript
+GET https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-arreglo-pago
+```
+
+### Query Parameters
+
+| Parámetro      |     Descripción      |
+| -------------- | -------------------- |
+| identificacion | Identificación de la persona  |
+
+### Ejemplo
+
+```javascript
+curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-arreglo-pago?idDeudor=12345678"
+```
+
+Este método devuelve JSON estructurado de la siguiente manera:
+
+```javascript
+{
+    "cantidadCuotas": 2,
+    "cuotas": [
+        {
+            "fechaVencimiento": "18/04/2021",
+            "monto": 12257.65,
+            "numero": 1
+        },
+        {
+            "fechaVencimiento": "18/05/2021",
+            "monto": 12257.65,
+            "numero": 2
+        }
+    ],
+    "montoTotal": 24515.3
+}
+```
+
 ## Ejecutar Pago
 
 Método para realizar la aplicación de un pago de una factura con el convenio dado.
