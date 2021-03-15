@@ -191,7 +191,6 @@ POST https://webservice.ejemplo.com/v1/declaraciones/guardarDeclaracion
 | ----------------------------- | -------------------- |
 | numeroCuenta                  | El número de la cuenta  |
 | numeroFinca                   | El número de finca   |
-| detalles                      | El detalle de la declaración  |
 
 :::caution
 
@@ -205,14 +204,8 @@ Al llamar este método se debe proporcionar el `número de cuenta` y el `número
 curl -XPOST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" -H 'Content-Type: application/json'
    "https://webservice.ejemplo.com/v1/declaraciones/guardarDeclaracion"
    -d '{"numeroCuenta":1000,
-        "numeroFinca":234567,
-        "detalles":[
-            {
-                "numeroConstruccion": 14,
-                "edad": 1
-            }
-        ]
-      }'
+        "numeroFinca":234567
+       }'
 ```
 
 Este método devuelvo JSON estructurado con el número de la declaración además de los valores calculados de terreno y construcción. También devuelve un código HTTP `200 OK` si se guardó correctamente:
