@@ -74,6 +74,10 @@ Este método devuelve JSON estructurado de la siguiente manera:
 ```javascript
 [
     {
+        "advertenciaAvaluo": false,
+        "alertaAvaluo": false,
+        "advertenciaDeclaracion": false,
+        "alertaDeclaracion": false,
         "apartado": "",
         "apartadoRepresentanteLegal": "",
         "areaRegis": 100.0,
