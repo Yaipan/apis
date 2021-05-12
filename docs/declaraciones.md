@@ -109,6 +109,7 @@ Este método devuelve JSON estructurado de la siguiente manera:
         "correoElectronico": "correo@example.com",
         "correoElectronicoAlterno": "alterno@example.com",
         "declaracionEnProceso": true,
+        "definicionIncompleta": false,
         "declaracionIngresadaEnLinea": true,
         "direccion1": "LA PRIMERA CASA A MANO IZQ",
         "direccionPropiedad": "KKKKKKKKKKK",
@@ -176,6 +177,8 @@ Este método guarda la información proporcionada por medio de una declaración 
 También se pueden proporcionar detalles de la declaración. En el detalle se pueden declarar cambios en la `edad` de una o más construcciones asociadas. Cada cambio debe llevar el número de construcción correspondiente que identifique a la construcción.
 
 :::important
+
+ Este método verifica valores obligatorios asociados a la finca que se estaría modificando. Se deberá revisar el valor del indicador `definicionIncompleta` de la respuesta del método `obtenerFinca` para saber cuando se puede llamar a este método. En caso de que `definicionIncompleta` está en `true` no se debería hacer la llamada a este método.
 
  Este método verifica que no existan ni declaraciones existentes ingresadas en línea ni declaraciones en proceso para la finca antes de intentar guardar la declaración. En caso de que exista una o más declaraciones ingresadas en línea o en proceso, se devolverá un error.
 
