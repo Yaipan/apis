@@ -4,7 +4,7 @@ title: Declaraciones de Bienes Inmuebles
 sidebar_label: Declaraciones de Bienes Inmuebles
 ---
 
-Los APIs aquí enumerados se utilizan para realizar una declaración de bienes inmuebles en línea. El método `obtenerFinca` se utiliza para consultar la información de las fincas y las ones asociadas.
+Los APIs aquí enumerados se utilizan para realizar una declaración de bienes inmuebles en línea. El método `obtenerFinca` se utiliza para consultar la información de las fincas y las declaraciones asociadas.
 
 Para registrar la declaración de bienes inmuebles se utiliza el método `guardarDeclaracion`. Después de haber registrado la declaración, la Municipalidad hace sus cálculos y puede ajustar los valores antes de generar el movimiento pendiente a la finca declarada para su posterior aplicación para la entrada en vigencia en el siguiente año. Se puede consultar el valor declarado de la finca por medio del método `obtenerValorDeclarado`.
 
