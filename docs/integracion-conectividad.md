@@ -312,6 +312,43 @@ En el caso del convenio de carrito de compras, la respuesta a obtener saldos de 
 
 :::
 
+### Ejemplo (Convenio Arreglo Pago)
+
+```javascript
+curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-persona?codigoConvenio=<CODIGO_CONVENIO_ARREGLO_PAGO>&identificacion=12345678"
+```
+
+Este método devuelve JSON estructurado de la siguiente manera:
+
+```javascript
+[
+    {
+        "arregloPago": {
+            "cantidadCuotas": 2,
+            "cuotas": [
+                {
+                    "fechaVencimiento": "18/04/2021",
+                    "monto": 12257.65,
+                    "numero": 1
+                },
+                {
+                    "fechaVencimiento": "18/05/2021",
+                    "monto": 12257.65,
+                    "numero": 1
+                }
+            ],
+            "montoTotal": 24515.3
+        }
+    }
+]
+```
+
+:::important
+
+En el caso del convenio de arreglo de pago, la respuesta a obtener saldos de persona tiene formato específico que indica la cantidad de cuotas, monto total y el detalle de las cuotas como parte del atributo arregloPago de cada ítem en la lista.
+
+:::
+
 ## Saldos Persona (Convenio Total)
 
 Método para consultar los saldos de una persona para el convenio total.
@@ -504,49 +541,6 @@ Este método devuelve JSON estructurado de la siguiente manera:
         "year": "2019"
     }
 ]
-```
-
-## Saldos Arreglo de Pago
-
-Método para consultar los saldos relacionados a un arreglo de pago.
-
-### HTTP Request
-
-```javascript
-GET https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-arreglo-pago
-```
-
-### Query Parameters
-
-| Parámetro      |     Descripción      |
-| -------------- | -------------------- |
-| identificacion | Identificación de la persona  |
-
-### Ejemplo
-
-```javascript
-curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/integracion-conectividad/saldos-arreglo-pago?idDeudor=12345678"
-```
-
-Este método devuelve JSON estructurado de la siguiente manera:
-
-```javascript
-{
-    "cantidadCuotas": 2,
-    "cuotas": [
-        {
-            "fechaVencimiento": "18/04/2021",
-            "monto": 12257.65,
-            "numero": 1
-        },
-        {
-            "fechaVencimiento": "18/05/2021",
-            "monto": 12257.65,
-            "numero": 2
-        }
-    ],
-    "montoTotal": 24515.3
-}
 ```
 
 ## Ejecutar Pago
