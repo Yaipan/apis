@@ -137,7 +137,7 @@ GET https://webservice.ejemplo.com/v1/yaipay/persona/saldos-resumen-detalle
 | Parámetro      |     Descripción      |
 | -------------- | -------------------- |
 | codigoConvenio | Código de convenio  |
-| identificacion | Identificación de la persona  |
+| cedula         | Cédula de la persona  |
 | idRubro        | Identificador de rubro  |
 | year           | Año  |
 | numeroPagina | Número de página  |
@@ -148,7 +148,7 @@ GET https://webservice.ejemplo.com/v1/yaipay/persona/saldos-resumen-detalle
 ### Ejemplo
 
 ```javascript
-curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/yaipay/persona/saldos-resumen-detalle?codigoConvenio=001&&identificacion=12345678&numeroPagina=1&longitudPagina=5"
+curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/yaipay/persona/saldos-resumen-detalle?codigoConvenio=001&&cedula=12345678&numeroPagina=1&longitudPagina=5"
 ```
 
 Este método devuelve JSON estructurado de la siguiente manera:
@@ -158,7 +158,7 @@ Este método devuelve JSON estructurado de la siguiente manera:
     "cantidadPaginas": 5,
     "longitudPagina": 5,
     "numeroPagina": 1,
-    "saldosPersona": [
+    "data": [
         {
             "descripcion": "SERVICIO DE RECOLECCIÓN DE BASURA RESID",
             "estado": "pendiente",
@@ -228,7 +228,7 @@ Este método devuelve JSON estructurado de la siguiente manera:
 }
 ```
 
-## Saldos Persona
+## Saldos
 
 Método para consultar los saldos de una persona para el convenio dado.
 
@@ -243,14 +243,14 @@ GET https://webservice.ejemplo.com/v1/yaipay/persona/saldos
 | Parámetro      |     Descripción      |
 | -------------- | -------------------- |
 | codigoConvenio | Código de convenio  |
-| identificacion | Identificación de la persona  |
+| cedula         | Cédula de la persona  |
 | fechaLimite | Fecha límite hasta donde filtrar saldos (opcional)  |
 | montoDisponible | Monto disponible (sólo para convenio de pago por monto) |
 
 ### Ejemplo
 
 ```javascript
-curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/yaipay/persona/saldos?codigoConvenio=001&identificacion=12345678"
+curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/yaipay/persona/saldos?codigoConvenio=001&cedula=12345678"
 ```
 
 Este método devuelve JSON estructurado de la siguiente manera:
@@ -320,7 +320,7 @@ En el caso del convenio de carrito de compras, la respuesta a obtener saldos de 
 ### Ejemplo (Convenio Arreglo Pago)
 
 ```javascript
-curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/yaipay/persona/saldos?codigoConvenio=<CODIGO_CONVENIO_ARREGLO_PAGO>&identificacion=12345678"
+curl -X GET -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU=" "https://webservice.ejemplo.com/v1/yaipay/persona/saldos?codigoConvenio=<CODIGO_CONVENIO_ARREGLO_PAGO>&cedula=12345678"
 ```
 
 Este método devuelve JSON estructurado de la siguiente manera:
@@ -373,7 +373,7 @@ POST https://webservice.ejemplo.com/v1/yaipay/persona/pagar
 
 | Parámetro      |     Descripción      |
 | -------------- | -------------------- |
-| llaveAcceso | Llave de acceso  |
+| cedula | Identificación de la persona  |
 | codigoConvenio | Código de convenio  |
 | codigoBanco | Código de banco donde se realizó el pago  |
 | codigoAgencia | Agencia del banco donde se realizó el pago  |
@@ -397,7 +397,7 @@ Las transacciones incluyen los siguientes atributos:
 curl -X POST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU="
     -H "Content-Type: application/json"
     "https://webservice.ejemplo.com/v1/yaipay/persona/pagar"
-    -d '{"llaveAcceso": "",
+    -d '{"cedula": "",
          "codigoConvenio": "",
          "codigoBanco": "",
          "codigoAgencia": "",
@@ -461,7 +461,7 @@ POST https://webservice.ejemplo.com/v1/yaipay/persona/reversar
 
 | Parámetro      |     Descripción      |
 | -------------- | -------------------- |
-| llaveAcceso | Llave de acceso  |
+| cedula | Identificación de la persona  |
 | codigoConvenio | Código de convenio  |
 | codigoBanco | Código de banco donde se realizó el pago  |
 | codigoAgencia | Agencia del banco donde se realizó el pago  |
@@ -474,7 +474,7 @@ POST https://webservice.ejemplo.com/v1/yaipay/persona/reversar
 curl -X POST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU="
     -H "Content-Type: application/json"
     "https://webservice.ejemplo.com/v1/yaipay/persona/reversar"
-    -d '{"llaveAcceso": "",
+    -d '{"cedula": "",
          "codigoConvenio": "",
          "codigoBanco": 0,
          "codigoAgencia": "",
