@@ -346,6 +346,7 @@ Este método devuelve JSON estructurado de la siguiente manera:
                         "numero": 1
                     }
                 ],
+                "existe": true,
                 "montoTotal": 24515.3
             }
         }
@@ -355,7 +356,7 @@ Este método devuelve JSON estructurado de la siguiente manera:
 
 :::important
 
-En el caso del convenio de arreglo de pago, la respuesta a obtener saldos de persona tiene formato específico que indica la cantidad de cuotas, monto total y el detalle de las cuotas como parte del atributo arregloPago de cada ítem en la lista.
+En el caso del convenio de arreglo de pago, la respuesta a obtener saldos de persona tiene formato específico que indica la cantidad de cuotas, monto total y el detalle de las cuotas como parte del atributo arregloPago de cada ítem en la lista. Esta estructura además indica si existe o no arreglo de pago.
 
 :::
 
