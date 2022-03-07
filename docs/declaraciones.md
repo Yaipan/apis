@@ -186,8 +186,8 @@ POST https://webservice.ejemplo.com/v1/declaraciones/registrarDeclaracion
 
 ### Body Parameters
 
-|Parámetro                                      |
-|-----------------------------------------------|
+|Parámetro                                      |Descripción|
+|-----------------------------------------------|--|
 |fechaDeclaracion                               |Fecha de la declaración|
 |numeroPropiedad                                |Número de la propiedad|
 |numeroFinca                                    |Número de la finca|
