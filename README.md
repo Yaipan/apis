@@ -12,6 +12,24 @@ $ brew install yarn
 
 ### Local Development
 
+Install node using nvm:
+
+```
+$ curl -L https://raw.githubusercontent.com/creationix/nvm/v0.38.0/install.sh -o nvm_install.sh
+$ chmod +x nvm_install.sh
+$ ./nvm_install.sh
+
+# Reopen terminal to reload profile
+
+$ nvm install lts/fermium
+$ nvm use lts/fermium
+
+$ node --version
+v14.18.3
+$ npm --version
+6.14.15
+```
+
 ```
 $ yarn install
 $ yarn start
