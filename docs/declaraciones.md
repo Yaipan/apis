@@ -295,7 +295,7 @@ Las construccionesDeclaracion incluyen  los siguientes atributos:
 curl -X POST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU="
     -H "Content-Type: application/json"
     "https://webservice.ejemplo.com/v1/declaraciones/registrarDeclaracion"
-    -d '{"fechaDeclaracion": "01/01/2022",
+    -d '{"fechaDeclaracion": 1640995200,
          "numeroPropiedad": 1,
          "numeroFinca": "",
          "numeroDerecho": "",
