@@ -448,6 +448,29 @@ Además, en el caso del convenio de carrito de compras, la respuesta sólo inclu
 
 :::
 
+### Ejemplo (Cuotas Arreglo Pago)
+
+```javascript
+curl -X POST -H "Authorization: Token RyNrhel3gtc92+4/Ml0RjbXTsJU="
+    -H "Content-Type: application/json"
+    "https://webservice.ejemplo.com/v1/yaipay/persona/pagar"
+    -d '{"cedula": "",
+         "codigoConvenio": "",
+         "codigoBanco": "",
+         "codigoAgencia": "",
+         "periodo": "",
+         "montoTotal": 0.0,
+         "numeroFactura": 0.0,
+         "cuotas": [
+           {
+             "numeroFinanciamiento": 41,
+             "numero": 2,
+             "monto": 1922.12
+           }
+         ]
+       }'
+```
+
 ## Reversar Pago
 
 Método para realizar una anulación de un pago.
