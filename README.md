@@ -21,13 +21,13 @@ $ ./nvm_install.sh
 
 # Reopen terminal to reload profile
 
-$ nvm install lts/fermium
-$ nvm use lts/fermium
+$ nvm install lts/gallium
+$ nvm use lts/gallium
 
 $ node --version
-v14.18.3
+v16.18.0
 $ npm --version
-6.14.15
+v8.19.2
 ```
 
 ```

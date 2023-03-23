@@ -68,6 +68,7 @@ GET https://webservice.ejemplo.com/v1/yaipay/persona/saldos-resumen
 | longitudPagina | Longitud de página  |
 | fechaLimite | Fecha límite hasta donde filtrar saldos (opcional)  |
 | montoDisponible | Monto disponible (sólo para convenio de pago por monto) |
+| numeroMedidor | Número de medidor (sólo para convenio de hidrómetros) |
 
 ### Ejemplo
 
@@ -144,6 +145,7 @@ GET https://webservice.ejemplo.com/v1/yaipay/persona/saldos-resumen-detalle
 | longitudPagina | Longitud de página  |
 | fechaLimite | Fecha límite hasta donde filtrar saldos (opcional)  |
 | montoDisponible | Monto disponible (sólo para convenio de pago por monto) |
+| numeroMedidor | Número de medidor (sólo para convenio de hidrómetros) |
 
 ### Ejemplo
 
@@ -246,6 +248,7 @@ GET https://webservice.ejemplo.com/v1/yaipay/persona/saldos
 | cedula         | Cédula de la persona  |
 | fechaLimite | Fecha límite hasta donde filtrar saldos (opcional)  |
 | montoDisponible | Monto disponible (sólo para convenio de pago por monto) |
+| numeroMedidor | Número de medidor (sólo para convenio de hidrómetros) |
 
 ### Ejemplo
 
